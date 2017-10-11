@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BE5A5071-93C1-43FC-47EA-0B96155F6B8A}</ProjectGuid>
+    <ProjectGuid>{8314DA26-AFE9-EE5F-909F-E511E581ED09}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -81,6 +81,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
+    <Compile Include="Assets\Scripts\AchievementSystem\AchievementSystem.cs" />
+    <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
+    <Compile Include="Assets\Scripts\BaseClass\IBaseUI.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\CharacterSystem.cs" />
+    <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
     <Compile Include="Assets\Scripts\GameFacade.cs" />
     <Compile Include="Assets\Scripts\GameLoop.cs" />
     <Compile Include="Assets\Scripts\SceneState\BattleState.cs" />
@@ -88,6 +95,11 @@
     <Compile Include="Assets\Scripts\SceneState\MainMenuState.cs" />
     <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
     <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
+    <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
+    <Compile Include="Assets\Scripts\UISystem\CampInfoUI.cs" />
+    <Compile Include="Assets\Scripts\UISystem\GamePauseUI.cs" />
+    <Compile Include="Assets\Scripts\UISystem\GameStateInfoUI.cs" />
+    <Compile Include="Assets\Scripts\UISystem\SoldierInfoUI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
