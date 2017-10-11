@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Scripts.CharacterSystem;
+using Assets.Scripts.EnergySystem;
+using Assets.Scripts.GameEventSystem;
+using Assets.Scripts.StageSystem;
+using Assets.Scripts.UISystem;
 
-
-public    class GameFacade
+/// <summary>
+/// 既有外观模式，也有中介者模式
+/// </summary>
+public  class GameFacade
 {
     private static GameFacade _instance = new GameFacade();
     public static GameFacade Instance { get { return _instance; } }
@@ -12,6 +19,25 @@ public    class GameFacade
     {
         
     }
+    /// <summary>
+    /// 关于中介者模式的具体调用
+    /// </summary>
+
+    #region MyRegion
+
+    private AchievementSystem mAchievementSystem;
+    private CampSystem mCampSystem;
+    private CharacterSystem mCharacterSystem;
+    private EnergySystem mEnergySystem;
+    private GameEventSystem mGameEventSystem;
+    private StageSystem mStageSystem;
+
+    private CampInfoUI mCampInfoUi;
+    private GamePauseUI mGamePauseUi;
+    private GameStateInfoUI mGameStateInfoUi;
+    private SoldierInfoUI mSoldierInfoUi;
+    #endregion
+
     private bool mIsGameOver = false;
 
     public bool isGameOver
@@ -20,17 +46,55 @@ public    class GameFacade
     }
         public void Init()
         {
-            
+         mAchievementSystem = new AchievementSystem();
+        mCampSystem = new CampSystem();
+        mCharacterSystem = new CharacterSystem();
+        mEnergySystem = new EnergySystem();
+        mGameEventSystem = new GameEventSystem();
+        mStageSystem = new StageSystem();
+        mCampInfoUi = new CampInfoUI();
+        mGamePauseUi = new GamePauseUI();
+        mSoldierInfoUi = new SoldierInfoUI();
+        mGameStateInfoUi = new GameStateInfoUI();
+        mAchievementSystem.Init();
+        mCampSystem.Init();
+        mCharacterSystem.Init();
+        mEnergySystem.Init();
+        mGameEventSystem.Init();
+        mStageSystem.Init();
+        mCampInfoUi.Init();
+        mGamePauseUi.Init();
+        mSoldierInfoUi.Init();
+        mGameStateInfoUi.Init();
+
         }
 
         public void Update()
         {
-            
-        }
+        mAchievementSystem.Update();
+            mCampSystem.Update();
+            mCharacterSystem.Update();
+            mEnergySystem.Update();
+            mGameEventSystem.Update();
+            mStageSystem.Update();
+            mCampInfoUi.Update();
+            mGamePauseUi.Update();
+            mSoldierInfoUi.Update();
+            mGameStateInfoUi.Update();
+    }
 
         public void Release()
         {
-            
-        }
+        mAchievementSystem.Release();
+            mCampSystem.Release();
+            mCharacterSystem.Release();
+            mEnergySystem.Release();
+            mGameEventSystem.Release();
+            mStageSystem.Release();
+            mCampInfoUi.Release();
+            mGamePauseUi.Release();
+            mSoldierInfoUi.Release();
+            mGameStateInfoUi.Release();
+    }
     }
 
