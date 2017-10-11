@@ -14,6 +14,18 @@ using UnityEngine.AI;
      protected GameObject mGameObject;
      protected NavMeshAgent mNavMeshAgent;
      protected AudioSource mAudio;
-     
+
+
+     protected IWeapon mWeapon;
+
+     public IWeapon Weapon
+     {
+         set { mWeapon = value; }
+     }
+     public void Attack(Vector3 targetPosition)
+     {
+       mWeapon.Fire(targetPosition);
+
+     }
  }
 
