@@ -14,7 +14,7 @@ using UnityEngine.AI;
      protected GameObject mGameObject;
      protected NavMeshAgent mNavMeshAgent;
      protected AudioSource mAudio;
-
+     protected Animation mAnim;
 
      protected IWeapon mWeapon;
 
@@ -22,10 +22,40 @@ using UnityEngine.AI;
      {
          set { mWeapon = value; }
      }
-     public void Attack(Vector3 targetPosition)
+
+     public float atkRange
      {
-       mWeapon.Fire(targetPosition);
+         get { return mWeapon.atkRange; }
+     }
+     public void Attack(ICharacter target)
+     {
+       mWeapon.Fire(target.Position);
 
      }
+
+     public void PlayAnim(string animName)
+     {
+         mAnim.CrossFade(animName);
+     }
+
+     public void MoveTo(Vector3 targetPosition)
+     {
+         mNavMeshAgent.SetDestination(targetPosition);
+     }
+
+     public Vector3 Position
+     {
+         get
+         {
+            if (mGameObject == null)
+             {
+                 Debug.LogError("gameObject为空");
+                 return Vector3.zero;
+             }
+             return mGameObject.transform.position;
+
+        }
+    }
+ 
  }
 
