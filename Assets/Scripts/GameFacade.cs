@@ -7,7 +7,7 @@ using Assets.Scripts.EnergySystem;
 using Assets.Scripts.GameEventSystem;
 using Assets.Scripts.StageSystem;
 using Assets.Scripts.UISystem;
-
+using UnityEngine;
 /// <summary>
 /// 既有外观模式，也有中介者模式
 /// </summary>
@@ -95,6 +95,11 @@ public  class GameFacade
             mGamePauseUi.Release();
             mSoldierInfoUi.Release();
             mGameStateInfoUi.Release();
+    }
+    public Vector3 GetEnemyTargetPosition()
+    {
+        //TOFO
+        return Vector3.zero;
     }
     }
 

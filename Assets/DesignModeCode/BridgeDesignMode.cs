@@ -24,7 +24,7 @@ using UnityEngine;
         ICharacter character = new SoldierCaptain();
         WeaponRifle rifle = new WeaponRifle();
             character.Weapon = new WeaponRifle();
-        character.Attack(Vector3.one);
+        character.Attack(character);
 
         }
        
