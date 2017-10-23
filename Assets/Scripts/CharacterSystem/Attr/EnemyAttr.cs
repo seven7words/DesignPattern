@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 
 
- public   class SoldierAttr:ICharacterAttr
+ public   class EnemyAttr:ICharacterAttr
     {
-        public SoldierAttr(IAttrStrategy strategy) : base(strategy)
+        public EnemyAttr(IAttrStrategy strategy) : base(strategy)
         {
+
         }
     }
 

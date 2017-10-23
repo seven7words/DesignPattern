@@ -9,7 +9,7 @@ public class IEnemy : ICharacter {
     {
         MakeFSM();
     }
-    public void UpdateFSMAI(List<ICharacter> targets)
+    public override void UpdateFSMAI(List<ICharacter> targets)
     {
         mFSMSystem.currentState.Reason(targets);
         mFSMSystem.currentState.Act(targets);
@@ -24,4 +24,21 @@ public class IEnemy : ICharacter {
         attackState.AddTransition(EnemyTransition.LostSoldier, EnemyStateID.Chase);
         mFSMSystem.AddState(chaseState, attackState);
         }
+
+    public override void UnderAttack(int damage)
+    {
+        base.UnderAttack(damage);
+        PlayEffect();
+        if (mAttr.currentHP <= 0)
+        {
+            Killed();
+        } 
+    }
+
+    protected virtual void PlayEffect()
+    {
+        
+    }
+
+    
 }

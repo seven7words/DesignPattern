@@ -16,7 +16,7 @@ using System.Text;
             return 0;
         }
 
-        public int GetCritDmg(int critRate)
+        public int GetCritDmg(float critRate)
         {
          float crit =  UnityEngine. Random.Range(0, 1f);
             if (crit < critRate)

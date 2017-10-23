@@ -8,6 +8,6 @@ using System.Text;
  {
      int GetExtralHPValue(int lv);
      int GetDmgDescValue(int lv);
-     int GetCritDmg(int critRate);
+     int GetCritDmg(float critRate);
 }
 

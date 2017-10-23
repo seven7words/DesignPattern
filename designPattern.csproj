@@ -91,7 +91,7 @@
     <Compile Include="Assets\Scripts\CharacterSystem\AttrStrategy\EnemyAttrStrategy.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\AttrStrategy\IAttrStrategy.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\AttrStrategy\SoldierAttrStrategy.cs" />
-    <Compile Include="Assets\Scripts\CharacterSystem\Attr\EnemyArrr.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\Attr\EnemyAttr.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attr\ICharacterAttr.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attr\SoldierAttr.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\CharacterSystem.cs" />

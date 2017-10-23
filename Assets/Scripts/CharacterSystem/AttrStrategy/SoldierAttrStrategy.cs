@@ -15,9 +15,10 @@ using System.Text;
             return (lv - 1) * 5;
         }
 
-        public int GetCritDmg(int critRate)
+        public int GetCritDmg(float critRate)
         {
-            return 0;
-        }
+        return 0;
+    }
+
     }
 

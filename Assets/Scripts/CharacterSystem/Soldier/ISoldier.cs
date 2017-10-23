@@ -12,7 +12,7 @@ public class ISoldier : ICharacter
         MakeFSM();
     }
 
-    public void UpdateFSMAI(List<ICharacter> targets)
+    public override void UpdateFSMAI(List<ICharacter> targets)
     {
         mFsmSystem.currentState.Reason(targets);
         mFsmSystem.currentState.Act(targets);
@@ -32,4 +32,20 @@ public class ISoldier : ICharacter
         mFsmSystem.AddState(idleState,chaseState,attackState);
       
     }
+
+    public override void UnderAttack(int damage)
+    {
+        base.UnderAttack(damage);
+        if (mAttr.currentHP <= 0)
+        {
+            PlaySound();
+            PlayEffect();
+            Killed();
+        }
+    }
+
+    protected virtual void PlaySound() { }
+    protected virtual void PlayEffect() { }
+
+
 }
