@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+public enum WeaponType
+{
+    Gun,
+    Rifle,
+    Rocket,
+}
 
 public abstract   class IWeapon
 {

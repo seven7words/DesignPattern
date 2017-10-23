@@ -77,6 +77,11 @@ using UnityEngine.AI;
 
 
      }
+
+     public ICharacterAttr attr
+     {
+         set { mAttr = value; }
+     }
     public Vector3 Position
      {
          get
