@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assets.Scripts.CharacterSystem;
 using Assets.Scripts.EnergySystem;
 using Assets.Scripts.GameEventSystem;
 using Assets.Scripts.StageSystem;

@@ -34,6 +34,28 @@ public abstract   class IWeapon
     {
         get { return mAtkRange; }
     }
+
+    public ICharacter Owner
+    {
+        set { mOwner = value; }
+    }
+
+    public GameObject GameObject
+    {
+        get { return mGameObject; }
+    }
+    public IWeapon(int atk, float atkRange, GameObject gameObject)
+    {
+        mAtk = atk;
+        mAtkRange = atkRange;
+        mGameObject = gameObject;
+        Transform effect = mGameObject.transform.Find("Effect");
+        mParticleSystem = effect.GetComponent<ParticleSystem>();
+        mLine = effect.GetComponent<LineRenderer>();
+        mLight = effect.GetComponent<Light>();
+        mAudio = effect.GetComponent<AudioSource>();
+
+    }
     public void Update()
     {
         if (mEffectDisplayTime > 0)
@@ -89,7 +111,7 @@ public abstract   class IWeapon
 
     protected void DoPlaySound(string clipName)
     {
-        AudioClip clip = null;//TODO
+        AudioClip clip = FactoryManager.AssetFactory.LoadAudioClip(clipName);
         mAudio.clip = clip;
         mAudio.Play();
     }

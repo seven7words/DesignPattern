@@ -22,8 +22,8 @@ using UnityEngine;
         //capsule1.Draw();
         //   // capsule1.DrawX();
         ICharacter character = new SoldierCaptain();
-        WeaponRifle rifle = new WeaponRifle();
-            character.Weapon = new WeaponRifle();
+        //WeaponRifle rifle = new WeaponRifle();
+        //    character.Weapon = new WeaponRifle();
         character.Attack(character);
 
         }

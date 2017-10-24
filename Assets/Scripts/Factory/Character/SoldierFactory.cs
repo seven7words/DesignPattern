@@ -6,9 +6,7 @@ public class SoldierFactory:ICharacterFactory
     public ICharacter CreateCharacter<T>(WeaponType weaponType, Vector3 spawnPosition, int lv = 1) 
     {
         ISoldier soldier = new ISoldier();
-        //创建角色游戏物体
-        //1.加载 2.实例化 TODO
-        //添加武器 TODO
+       
 
 
          string name;
@@ -46,8 +44,17 @@ public class SoldierFactory:ICharacterFactory
             Debug.LogError("没有士兵类型"+t);
              return null;
         }
-        ICharacterAttr attr = new SoldierAttr(new SoldierAttrStrategy(), name,maxHP,moveSpeed,iconSprite,prefabName);
+        ICharacterAttr attr = new SoldierAttr(new SoldierAttrStrategy(), lv,name,maxHP,moveSpeed,iconSprite,prefabName);
         soldier.attr = attr;
+        //创建角色游戏物体
+        //1.加载 2.实例化 TODO
+        GameObject characterGO = FactoryManager.AssetFactory.LoadSoldier(prefabName);
+        characterGO.transform.position = spawnPosition;
+        soldier.gameObject = characterGO;
+
+        //添加武器 TODO
+        IWeapon weapon = FactoryManager.WeaponFactory.CreateWeapon(weaponType);
+        soldier.Weapon = weapon;
         return soldier;
     }
     

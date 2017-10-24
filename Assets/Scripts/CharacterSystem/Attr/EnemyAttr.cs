@@ -6,9 +6,8 @@ using System.Text;
 
  public   class EnemyAttr:ICharacterAttr
     {
-        public EnemyAttr(IAttrStrategy strategy,  string name, int maxHp, float moveSpeed, string iconSprite, string prefabName) : base(strategy,  name,  maxHp,  moveSpeed,  iconSprite,  prefabName)
+        public EnemyAttr(IAttrStrategy strategy, int lv, string name, int maxHp, float moveSpeed, string iconSprite, string prefabName) : base(strategy, lv, name, maxHp, moveSpeed, iconSprite, prefabName)
         {
-
         }
     }
 

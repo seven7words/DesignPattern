@@ -19,16 +19,18 @@ using System.Text;
 
         protected int mDmgDescValue;
 
-        public ICharacterAttr(IAttrStrategy strategy,string name,int maxHp,float moveSpeed,string iconSprite,string prefabName)
+        public ICharacterAttr(IAttrStrategy strategy,int lv,string name,int maxHp,float moveSpeed,string iconSprite,string prefabName)
         {
             mName = name;
             mMaxHP = maxHp;
             mMoveSpeed = moveSpeed;
             mIconSprite = iconSprite;
             mPrefabName = prefabName;
-            mStrategy = strategy;
+            mLv = lv;
+        mStrategy = strategy;
         mDmgDescValue = mStrategy.GetCritDmg(mCritRate);
             mCurrentHP = mMaxHP + mStrategy.GetExtralHPValue(mLv);
+            
         }
     //增加的最大血量，抵御的伤害值，暴击增加的伤害
         protected IAttrStrategy mStrategy;

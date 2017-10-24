@@ -20,7 +20,14 @@ using UnityEngine.AI;
 
      public IWeapon Weapon
      {
-         set { mWeapon = value; }
+         set
+         {
+             mWeapon = value;
+            mWeapon.Owner = this;
+            //Transform weaponPoint = mGameObject.transform.Find()
+             GameObject child = UnityTool.FindChild(mGameObject, "weapon-point");
+             UnityTool.Attach(child,mWeapon.GameObject);
+         }
      }
 
      public float atkRange
@@ -33,6 +40,17 @@ using UnityEngine.AI;
         mGameObject.transform.LookAt(target.Position);
         PlayAnim("attack");
         target.UnderAttack(mWeapon.atk+mAttr.critValue);
+     }
+
+     public GameObject gameObject
+     {
+         set
+         {
+             mGameObject = value;
+             mNavMeshAgent = mGameObject.GetComponent<NavMeshAgent>();
+             mAudio = mGameObject.GetComponent<AudioSource>();
+             mAnim = mGameObject.GetComponentInChildren<Animation>();
+         }
      }
 
      public virtual void UnderAttack(int damage)
@@ -65,16 +83,17 @@ using UnityEngine.AI;
      }
      protected void DoPlaySound(string soundName)
      {
-         AudioClip clip = null;//TODO
+         AudioClip clip = FactoryManager.AssetFactory.LoadAudioClip(soundName);
          mAudio.clip = clip;
          mAudio.Play();
      }
      protected void DoPlayEffect(string effectName)
      {
          //加载特效 TODO
-         GameObject effectGO;
+         GameObject effectGO = FactoryManager.AssetFactory.LoadEffect(effectName);
+         effectGO.transform.position = Position;
          //控制销毁 TODO
-
+         effectGO.AddComponent<DestroyForTime>();
 
      }
 
