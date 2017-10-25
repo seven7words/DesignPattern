@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DesignModeCode\BridgeDesignMode.cs" />
+    <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
@@ -118,6 +119,10 @@
     <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\RemoteAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Builder\CharacterBuilderDirector.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Builder\EnemyBuilder.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Builder\ICharacterBuilder.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Builder\SoldierBuilder.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\ICharacterFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\SoldierFactory.cs" />

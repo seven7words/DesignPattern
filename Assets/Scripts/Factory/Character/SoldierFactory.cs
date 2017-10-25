@@ -7,55 +7,8 @@ public class SoldierFactory:ICharacterFactory
     {
         ISoldier soldier = new ISoldier();
        
-
-
-         string name;
-         int maxHP;
-         float moveSpeed;
-         string iconSprite;
-        
-         string prefabName;
-        Type t = typeof(T);
-        if (t == typeof(SoldierCaptain))
-        {
-            name = "上尉士兵";
-            maxHP = 100;
-            moveSpeed = 3;
-            iconSprite = "CaptainIcon";
-            prefabName = "Soldier1";
-        }else if (t == typeof(SoldierSergeant))
-        {
-            name = "中士士兵";
-            maxHP = 90;
-            moveSpeed = 3;
-            iconSprite = "SergeantIcon";
-            prefabName = "Soldier3";
-        }
-        else if (t == typeof(SoldierRookie))
-        {
-            name = "新手士兵";
-            maxHP = 80;
-            moveSpeed = 2.5f;
-            iconSprite = "RookieIcon";
-            prefabName = "Soldier2";
-        }
-        else
-        {
-            Debug.LogError("没有士兵类型"+t);
-             return null;
-        }
-        ICharacterAttr attr = new SoldierAttr(new SoldierAttrStrategy(), lv,name,maxHP,moveSpeed,iconSprite,prefabName);
-        soldier.attr = attr;
-        //创建角色游戏物体
-        //1.加载 2.实例化 TODO
-        GameObject characterGO = FactoryManager.AssetFactory.LoadSoldier(prefabName);
-        characterGO.transform.position = spawnPosition;
-        soldier.gameObject = characterGO;
-
-        //添加武器 TODO
-        IWeapon weapon = FactoryManager.WeaponFactory.CreateWeapon(weaponType);
-        soldier.Weapon = weapon;
-        return soldier;
+       ICharacterBuilder builder = new SoldierBuilder(soldier,typeof(T),weaponType,spawnPosition,lv);
+        return CharacterBuilderDirector.Construct(builder);
     }
     
 }
