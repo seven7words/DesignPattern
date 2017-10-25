@@ -7,7 +7,19 @@ public static class FactoryManager
     private static ICharacterFactory mSoldierFactory = null;
     private static ICharacterFactory mEnemyFactory = null;
     private static IWeaponFactory mWeaponFactory = null;
+    private static IAttrFactory mAttrFactory = null;
 
+    public static IAttrFactory AttrFactory
+    {
+        get
+        {
+            if (mAttrFactory == null)
+            {
+                mAttrFactory = new AttrFactory();
+            }
+            return mAttrFactory;
+        }
+    }
     public static IAssetFactory AssetFactory
     {
         get

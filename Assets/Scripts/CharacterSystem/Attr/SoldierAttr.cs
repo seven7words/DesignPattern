@@ -6,7 +6,7 @@ using System.Text;
 
  public   class SoldierAttr:ICharacterAttr
     {
-        public SoldierAttr(IAttrStrategy strategy, int lv, string name, int maxHp, float moveSpeed, string iconSprite, string prefabName) : base(strategy, lv, name, maxHp, moveSpeed, iconSprite, prefabName)
+        public SoldierAttr(IAttrStrategy strategy, int lv, CharacterBaseAttr baseAttr) : base(strategy, lv, baseAttr)
         {
         }
     }

@@ -32,14 +32,14 @@ using UnityEngine.AI;
 
      public float atkRange
      {
-         get { return mWeapon.atkRange; }
+         get { return mWeapon.BaseAttr.AtkRange; }
      }
      public void Attack(ICharacter target)
      {
        mWeapon.Fire(target.Position);
         mGameObject.transform.LookAt(target.Position);
         PlayAnim("attack");
-        target.UnderAttack(mWeapon.atk+mAttr.critValue);
+        target.UnderAttack(mWeapon.BaseAttr.Atk + mAttr.critValue);
      }
 
      public GameObject gameObject

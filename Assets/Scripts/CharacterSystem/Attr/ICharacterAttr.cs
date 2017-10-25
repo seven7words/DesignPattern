@@ -5,31 +5,20 @@ using System.Text;
 
 
  public   class ICharacterAttr
-    {
-        protected string mName;
-        protected int mMaxHP;
-        protected float mMoveSpeed;
-        protected string mIconSprite;
+ {
+     protected CharacterBaseAttr mBaseAttr;
 
-        protected string mPrefabName;
-
-    protected int mCurrentHP;
+        protected int mCurrentHP;
         protected int mLv;
-        protected float mCritRate;//0-1暴击率
-
         protected int mDmgDescValue;
 
-        public ICharacterAttr(IAttrStrategy strategy,int lv,string name,int maxHp,float moveSpeed,string iconSprite,string prefabName)
+        public ICharacterAttr(IAttrStrategy strategy,int lv,CharacterBaseAttr baseAttr)
         {
-            mName = name;
-            mMaxHP = maxHp;
-            mMoveSpeed = moveSpeed;
-            mIconSprite = iconSprite;
-            mPrefabName = prefabName;
             mLv = lv;
+            mBaseAttr = baseAttr;
         mStrategy = strategy;
-        mDmgDescValue = mStrategy.GetCritDmg(mCritRate);
-            mCurrentHP = mMaxHP + mStrategy.GetExtralHPValue(mLv);
+        mDmgDescValue = mStrategy.GetCritDmg(mLv);
+            mCurrentHP = baseAttr.MaxHP + mStrategy.GetExtralHPValue(mLv);
             
         }
     //增加的最大血量，抵御的伤害值，暴击增加的伤害
@@ -37,7 +26,7 @@ using System.Text;
 
         public int critValue
         {
-            get { return mDmgDescValue; }
+            get { return mStrategy.GetCritDmg(mBaseAttr.CritRate); }
         }
 
         public int currentHP

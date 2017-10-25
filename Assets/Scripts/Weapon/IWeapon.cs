@@ -11,10 +11,9 @@ public enum WeaponType
     Rocket,
 }
 
-public abstract   class IWeapon
+public    class IWeapon
 {
-    protected int mAtk;
-    protected float mAtkRange;
+    protected WeaponBaseAttr mBaseAttr;
     //protected int mAtkPlusValue;
     protected GameObject mGameObject;
 
@@ -26,13 +25,9 @@ public abstract   class IWeapon
     protected AudioSource mAudio;
     protected float mEffectDisplayTime = 0;
 
-    public int atk
+    public WeaponBaseAttr BaseAttr
     {
-        get { return mAtk; }
-    }
-    public float atkRange
-    {
-        get { return mAtkRange; }
+        get { return mBaseAttr; }
     }
 
     public ICharacter Owner
@@ -44,10 +39,9 @@ public abstract   class IWeapon
     {
         get { return mGameObject; }
     }
-    public IWeapon(int atk, float atkRange, GameObject gameObject)
+    public IWeapon(WeaponBaseAttr baseAttr,  GameObject gameObject)
     {
-        mAtk = atk;
-        mAtkRange = atkRange;
+        mBaseAttr = baseAttr;
         mGameObject = gameObject;
         Transform effect = mGameObject.transform.Find("Effect");
         mParticleSystem = effect.GetComponent<ParticleSystem>();
@@ -85,7 +79,7 @@ public abstract   class IWeapon
         
     }
 
-    protected abstract void SetEffectDisplay();
+    protected virtual void SetEffectDisplay() { }
 
     protected virtual void PlayMuzzleEffect()
     {
@@ -95,7 +89,7 @@ public abstract   class IWeapon
         mLight.enabled = true;
     }
 
-    protected abstract void PlayBulletEffect(Vector3 targetPosition);
+    protected virtual void PlayBulletEffect(Vector3 targetPosition) { }
 
     protected void DoPlayBulletEffect(Vector3 targetPosition, float width)
     {
@@ -107,7 +101,7 @@ public abstract   class IWeapon
         mLine.SetPosition(1, targetPosition);
     }
 
-    protected abstract void PlaySound();
+    protected virtual void PlaySound() { }
 
     protected void DoPlaySound(string clipName)
     {

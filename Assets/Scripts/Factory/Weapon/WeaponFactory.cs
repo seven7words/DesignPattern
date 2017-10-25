@@ -5,27 +5,10 @@ public class WeaponFactory:IWeaponFactory
 {
     public IWeapon CreateWeapon(WeaponType weaponType)
     {
-        IWeapon weapon = null;
-        string assetName = "";
+        IAssetFactory factory = new ResourcesAssetFactory();
+        WeaponBaseAttr baseAttr = FactoryManager.AttrFactory.GetWeaponBaseAttr(weaponType);
+        IWeapon weapon = new IWeapon(baseAttr, factory.LoadWeapon(baseAttr.AssetName));
 
-        
-        switch (weaponType)
-        {
-            case WeaponType.Gun:
-                assetName = "WeaponGun";
-                weapon = new WeaponGun(20,5, LoadWeaponGO(assetName));
-                break;
-            case WeaponType.Rifle:
-                assetName = "WeaponRifle";
-                weapon = new WeaponRifle(30, 7, LoadWeaponGO(assetName));
-               
-                break;
-            case WeaponType.Rocket:
-                assetName = "WeaponRocket";
-                weapon = new WeaponRocket(40, 8, LoadWeaponGO(assetName));
-               
-                break;
-        }
         return weapon;
     }
 
