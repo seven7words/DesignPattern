@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Assets\DesignModeCode\BridgeDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
+    <Compile Include="Assets\DesignModeCode\CompositeDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
