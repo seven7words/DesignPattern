@@ -5,7 +5,6 @@ using System.Text;
 using Assets.Scripts.EnergySystem;
 using Assets.Scripts.GameEventSystem;
 using Assets.Scripts.StageSystem;
-using Assets.Scripts.UISystem;
 using UnityEngine;
 /// <summary>
 /// 既有外观模式，也有中介者模式
