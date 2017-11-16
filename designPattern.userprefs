@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{8314DA26-AFE9-EE5F-909F-E511E581ED09}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UISystem/SoldierInfoUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CampSystem/CampSystem.cs">
     <Files>
       <File FileName="Assets/Scripts/GameFacade.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UISystem/CampInfoUI.cs" Line="35" Column="6" />
@@ -9,6 +9,11 @@
       <File FileName="Assets/Scripts/UISystem/GamePauseUI.cs" Line="18" Column="6" />
       <File FileName="Assets/Scripts/UISystem/GameStateInfoUI.cs" Line="23" Column="1" />
       <File FileName="Assets/Scripts/UISystem/SoldierInfoUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CampSystem/Icamp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterSystem/Soldier/ISoldier.cs" Line="8" Column="13" />
+      <File FileName="Assets/Scripts/CampSystem/SoldierCamp.cs" Line="9" Column="131" />
+      <File FileName="Assets/Scripts/Weapon/IWeapon.cs" Line="12" Column="8" />
+      <File FileName="Assets/Scripts/CampSystem/CampSystem.cs" Line="37" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

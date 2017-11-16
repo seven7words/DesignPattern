@@ -52,7 +52,7 @@ public static class UnityTool
             {
                 if (isFinded)
                 {
-                    Debug.LogWarning("ÔÚÓÎÏ·ÎïÌå"+parent+"ÏÂ´æÔÚ¶à¸ö"+childName);
+                    Debug.LogWarning("åœ¨æ¸¸æˆç‰©ä½“" + parent + "ä¸‹å­˜åœ¨ä¸æ­¢ä¸€ä¸ªå­ç‰©ä½“:" + childName);
                     break;
                 }
                 isFinded = true;
@@ -60,7 +60,8 @@ public static class UnityTool
 
             }
         }
-        return myChild.gameObject;
+        if(isFinded) return myChild.gameObject;
+        return null;
     }
 
     public static void Attach(GameObject parent, GameObject child)

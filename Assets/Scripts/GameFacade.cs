@@ -10,9 +10,14 @@ using UnityEngine;
 /// 既有外观模式，也有中介者模式
 /// </summary>
 public  class GameFacade
-{
+{ 
     private static GameFacade _instance = new GameFacade();
+
+    private bool mIsGameOver = false;
+
     public static GameFacade Instance { get { return _instance; } }
+
+    public bool isGameOver { get { return mIsGameOver; } }
     private GameFacade()
     {
         
@@ -36,12 +41,6 @@ public  class GameFacade
     private SoldierInfoUI mSoldierInfoUi;
     #endregion
 
-    private bool mIsGameOver = false;
-
-    public bool isGameOver
-    {
-        get { return mIsGameOver; }
-    }
         public void Init()
         {
          mAchievementSystem = new AchievementSystem();

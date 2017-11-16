@@ -21,8 +21,11 @@ using UnityEngine.UI;
     {
         base.Init();
         GameObject canvas = GameObject.Find("Canvas");
+        
         mRootUI = UnityTool.FindChild(canvas, "CampInfoUI");
+        Debug.Log(mRootUI);
         mCampIcon = UITool.FindChild<Image>(mRootUI, "CampIcon");
+        Debug.Log(mCampIcon);
         mCampName = UITool.FindChild<Text>(mRootUI, "CampName");
         mCampLevel = UITool.FindChild<Text>(mRootUI, "CampLv");
         mCampUpgradeButton = UITool.FindChild<Button>(mRootUI, "CampUpgradeButton");
@@ -30,8 +33,9 @@ using UnityEngine.UI;
         mTrainButton = UITool.FindChild<Button>(mRootUI, "TrainButton");
         mCancelTrainButton = UITool.FindChild<Button>(mRootUI, "CancelTrainButton");
         mAliveCount = UITool.FindChild<Text>(mRootUI, "AliveCount");
-        mTrainCount = UITool.FindChild<Text>(mRootUI, "TrainCount");
+        mTrainCount = UITool.FindChild<Text>(mRootUI, "TrainingCount");
         mTrainTime = UITool.FindChild<Text>(mRootUI, "TrainTime");
+        Hide();
     }
 }
 

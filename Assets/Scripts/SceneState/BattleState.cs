@@ -20,6 +20,7 @@ public class BattleState : ISceneState
 
     public override void StateEnd()
     {
+
         GameFacade.Instance.Release();
     }
 
@@ -29,7 +30,7 @@ public class BattleState : ISceneState
         {
             Controller.SetState(new MainMenuState(Controller));
         }
-        mFacade.Update();
+        GameFacade.Instance.Update();
     }
 }
 

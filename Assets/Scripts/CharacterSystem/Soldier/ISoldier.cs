@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SoldierType{
+    Rookie,
+    Sergeant,
+    Captain,
+}
 public class ISoldier : ICharacter
 {
 

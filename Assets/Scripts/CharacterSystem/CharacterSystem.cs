@@ -30,16 +30,6 @@ class CharacterSystem : IGameSystem
             mSoldiers.Remove(soldier);
         }
 
-        public void Init()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Release()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Update()
         {
 
