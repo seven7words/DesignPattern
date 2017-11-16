@@ -34,9 +34,8 @@ using UnityEngine.UI;
             mEnemyCount = UITool.FindChild<Text>(mRootUI, "EnemyCount");
             mCurrentStage = UITool.FindChild<Text>(mRootUI, "StageCounter");
             mPauseButton = UITool.FindChild<Button>(mRootUI, "PauseButton");
-            
-            mGameOverUI = GameObject.Find("Canvas/GameStateUI/GameOver");
-            //mGameOverUI = UITool.FindChild<GameObject>(mRootUI,"GameOver");
+           // mGameOverUI = GameObject.Find("Canvas/GameStateUI/GameOver");
+            mGameOverUI = UnityTool.FindChild(mRootUI,"GameOver");
             mBackButton = UITool.FindChild<Button>(mRootUI, "BackButton");
             mMessage = UITool.FindChild<Text>(mRootUI, "Message");
             mEnergySlider = UITool.FindChild<Slider>(mRootUI, "EnergySlider");
