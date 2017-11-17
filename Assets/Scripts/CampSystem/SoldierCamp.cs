@@ -10,4 +10,14 @@ public class SoldierCamp : Icamp
             mLv = lv;
         mWeaponType = weaponType;
     }
+    public override int lv{
+        get{
+            return mLv;
+        }
+    }
+    public override WeaponType WeaponType{
+        get{
+            return mWeaponType;
+        }
+    }
 }

@@ -17,6 +17,8 @@ using UnityEngine.UI;
     private Text mAliveCount;
     private Text mTrainCount;
     private Text mTrainTime;
+    private Text mWeaponLv;
+    private Icamp mCamp;
     public override void Init()
     {
         base.Init();
@@ -35,7 +37,31 @@ using UnityEngine.UI;
         mAliveCount = UITool.FindChild<Text>(mRootUI, "AliveCount");
         mTrainCount = UITool.FindChild<Text>(mRootUI, "TrainingCount");
         mTrainTime = UITool.FindChild<Text>(mRootUI, "TrainTime");
+        mWeaponLv = UITool.FindChild<Text>(mRootUI,"WeaponLv");
         Hide();
+    }
+    public void ShowCampInfo(Icamp camp){
+        Show();
+        mCamp = camp;
+        mCampIcon.sprite = FactoryManager.AssetFactory.LoadSprite(camp.iconSprite);
+        mCampName.text = camp.name;
+        mCampLevel.text = camp.lv.ToString();
+        ShowWeaponLevel(camp.WeaponType);
+    }
+    void ShowWeaponLevel(WeaponType weaponType){
+        switch(weaponType){
+            case WeaponType.Gun:
+                mWeaponLv.text = "短枪";
+            break;
+            case WeaponType.Rifle:
+                mWeaponLv.text = "长枪";
+            break;
+            case WeaponType.Rocket:
+                mWeaponLv.text = "火箭";
+            break;
+            default:
+            break;
+        }
     }
 }
 

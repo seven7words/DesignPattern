@@ -56,6 +56,8 @@ public   class CampSystem : IGameSystem
         gameObject = GameObject.Find(gameObjectName);
         position = UnityTool.FindChild(gameObject,"TrainPoint").transform.position;
         SoldierCamp camp = new SoldierCamp(gameObject,name,icon,soldierType,position,trainTime);
+        CampOnClick campOnClick = gameObject.AddComponent<CampOnClick>();
+        campOnClick.camp = camp;
         mSoldierCamps.Add(soldierType, camp);
     }
     public override void  Update(){

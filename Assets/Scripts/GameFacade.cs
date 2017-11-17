@@ -98,5 +98,8 @@ public  class GameFacade
         //TOFO
         return Vector3.zero;
     }
+    public void ShowCampInfo(Icamp camp){
+        mCampInfoUi.ShowCampInfo(camp);
+    }
     }
 

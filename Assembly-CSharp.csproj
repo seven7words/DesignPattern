@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\DesignModeCode\BridgeDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\CommandDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CompositeDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
@@ -109,6 +110,7 @@
      <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
      <Compile Include="Assets\Scripts\GameFacade.cs" />
      <Compile Include="Assets\Scripts\GameLoop.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviour\CampOnClick.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviour\DestroyForTime.cs" />
      <Compile Include="Assets\Scripts\SceneState\BattleState.cs" />
      <Compile Include="Assets\Scripts\SceneState\ISceneState.cs" />

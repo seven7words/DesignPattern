@@ -31,13 +31,14 @@ public class ResourcesAssetFactory:IAssetFactory
 
     public AudioClip LoadAudioClip(string name)
     {
-        
-        return LoadAsset(AudioPath + name) as AudioClip;
+        return  Resources.Load(AudioPath+name,typeof(AudioClip)) as AudioClip;
+       // return LoadAsset(AudioPath + name) as AudioClip;
     }
 
     public Sprite LoadSprite(string name)
     {
-        return LoadAsset(SpritePath + name) as Sprite;
+       return  Resources.Load(SpritePath+name,typeof(Sprite)) as Sprite;
+        //return LoadAsset(SpritePath + name) as Sprite;
     }
 
     private GameObject InstantiateGameObject(string path)
@@ -45,7 +46,7 @@ public class ResourcesAssetFactory:IAssetFactory
      GameObject go =   Resources.Load(path) as GameObject;
         if (go == null)
         {
-            Debug.LogError("无法加载资源路径"+path);
+            Debug.LogError("鏃犳硶鍔犺浇璧勬簮"+path);
             return null;
         }
         return GameObject.Instantiate(go);
@@ -57,7 +58,7 @@ public class ResourcesAssetFactory:IAssetFactory
         UnityEngine.Object go = Resources.Load(path) ;
         if (go == null)
         {
-            Debug.LogError("无法加载资源路径" + path);
+            Debug.LogError("锟睫凤拷锟斤拷锟斤拷锟斤拷源路锟斤拷" + path);
             return null;
         }
         return go;

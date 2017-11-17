@@ -22,5 +22,35 @@ public abstract class Icamp {
     public virtual void Update(){
         
     }
-    
+    public string name{
+        get{
+            return mName;
+        }
+    }
+    public string iconSprite{
+        get{
+            return mIconSprite;
+        }
+    }
+    public SoldierType soldierType{
+        get{
+            return mSoldierType;
+        }
+    }
+    public Vector3 Position{
+        get{
+            return mPosition;
+        }
+    }
+    public float TrainTime{
+        get{
+            return mTrainTime;
+        }
+    }
+    public abstract int lv{
+        get;
+    }
+    public abstract WeaponType WeaponType{
+        get;
+    }
 }
