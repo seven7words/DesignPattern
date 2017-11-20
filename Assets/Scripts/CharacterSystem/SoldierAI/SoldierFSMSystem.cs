@@ -7,7 +7,7 @@ using UnityEngine;
 
 public  class SoldierFSMSystem
   {
-      private List<ISoldierState> mStates;
+      private List<ISoldierState> mStates = new List<ISoldierState>();
       private ISoldierState mCurrentState;
 
       public ISoldierState currentState

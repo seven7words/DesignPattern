@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyFSMSystem
 
 {
-    private List<IEnemyState> mStates;
+    private List<IEnemyState> mStates = new List<IEnemyState>();
     private IEnemyState mCurrentState;
 
     public IEnemyState currentState
@@ -23,7 +23,7 @@ public class EnemyFSMSystem
     {
         if (state == null)
         {
-            Debug.LogError("ÒªÌí¼ÓµÄ×´Ì¬Îª¿Õ");
+            Debug.LogError("Òªï¿½ï¿½Óµï¿½×´Ì¬Îªï¿½ï¿½");
             return;
         }
         if (mStates.Count == 0)
@@ -37,7 +37,7 @@ public class EnemyFSMSystem
         {
             if (enemyState.StateID == state.StateID)
             {
-                Debug.LogError("ÒªÌí¼ÓµÄ×´Ì¬ID" + enemyState.StateID + "ÒÑ¾­´æÔÚ");
+                Debug.LogError("Òªï¿½ï¿½Óµï¿½×´Ì¬ID" + enemyState.StateID + "ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½");
             }
         }
         mStates.Add(state);
@@ -47,7 +47,7 @@ public class EnemyFSMSystem
     {
         if (stateID == EnemyStateID.NullState)
         {
-            Debug.LogError("ÒªÉ¾³ýµÄ×´Ì¬IDÎª¿Õ" + stateID);
+            Debug.LogError("ÒªÉ¾ï¿½ï¿½ï¿½ï¿½×´Ì¬IDÎªï¿½ï¿½" + stateID);
 
         }
         foreach (IEnemyState enemyState in mStates)
@@ -58,20 +58,20 @@ public class EnemyFSMSystem
                 return;
             }
         }
-        Debug.LogError("ÒªÉ¾³ýµÄstateID²»´æÔÚÓÚ¼¯ºÏÖÐ" + stateID);
+        Debug.LogError("ÒªÉ¾ï¿½ï¿½ï¿½ï¿½stateIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½" + stateID);
     }
 
     public void PerformTransition(EnemyTransition trans)
     {
         if (trans == EnemyTransition.NullTransition)
         {
-            Debug.LogError("ÒªÖ´ÐÐµÄ×ª»»Ìõ¼þÎª¿Õ" + trans);
+            Debug.LogError("ÒªÖ´ï¿½Ðµï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + trans);
             return;
         }
         EnemyStateID nextStateID = mCurrentState.GetOutPutState(trans);
         if (nextStateID == EnemyStateID.NullState)
         {
-            Debug.LogError("ÔÚ×ª»»Ìõ¼þ" + trans + "ÏÂÃ»ÓÐ¶ÔÓ¦µÄ×ª»»×´Ì¬");
+            Debug.LogError("ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + trans + "ï¿½ï¿½Ã»ï¿½Ð¶ï¿½Ó¦ï¿½ï¿½×ªï¿½ï¿½×´Ì¬");
         }
         foreach (IEnemyState enemyState in mStates)
         {
