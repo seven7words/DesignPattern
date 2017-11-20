@@ -14,31 +14,28 @@ public class AttrFactory:IAttrFactory
     private void InitCharacterBaseAttr()
     {
         mCharacterBaseAttrsDict = new Dictionary<Type, CharacterBaseAttr>();
-        //ÈËÎïÊôĞÔ
-        mCharacterBaseAttrsDict.Add(typeof(SoldierRookie),new CharacterBaseAttr("ĞÂÊÖÊ¿±ø",80,2.5f,"RookieIcon",0,"Soldier2"));
-        mCharacterBaseAttrsDict.Add(typeof(SoldierSergeant), new CharacterBaseAttr("ÖĞÊ¿Ê¿±ø", 90, 3f, "SergeantIcon", 0, "Soldier3"));
-        mCharacterBaseAttrsDict.Add(typeof(SoldierCaptain), new CharacterBaseAttr("ÉÏÎ¾Ê¿±ø", 100, 3f, "CaptainIcon", 0, "Soldier1"));
-        //µĞÈËÊôĞÔ
-        mCharacterBaseAttrsDict.Add(typeof(EnemyElf), new CharacterBaseAttr("Ğ¡¾«Áé", 100, 3f, "ElfIcon", 0.2f, "Enemy1"));
-        mCharacterBaseAttrsDict.Add(typeof(EnemyOgre), new CharacterBaseAttr("¹ÖÎï", 120, 4f, "OgreIcon", 0.3f, "Enemy2"));
-        mCharacterBaseAttrsDict.Add(typeof(EnemyTroll), new CharacterBaseAttr("¾ŞÄ§", 200, 1f, "TrollIcon", 0.4f, "Enemy3"));
+        mCharacterBaseAttrsDict.Add(typeof(SoldierRookie),new CharacterBaseAttr("æ–°æ‰‹å£«å…µ",80,2.5f,"RookieIcon",0,"Soldier2"));
+        mCharacterBaseAttrsDict.Add(typeof(SoldierSergeant), new CharacterBaseAttr("ä¸­å£«å£«å…µ", 90, 3f, "SergeantIcon", 0, "Soldier3"));
+        mCharacterBaseAttrsDict.Add(typeof(SoldierCaptain), new CharacterBaseAttr("ä¸Šå°‰å£«å…µ", 100, 3f, "CaptainIcon", 0, "Soldier1"));
+        mCharacterBaseAttrsDict.Add(typeof(EnemyElf), new CharacterBaseAttr("å°ç²¾çµ", 100, 3f, "ElfIcon", 0.2f, "Enemy1"));
+        mCharacterBaseAttrsDict.Add(typeof(EnemyOgre), new CharacterBaseAttr("æ€ªç‰©", 120, 4f, "OgreIcon", 0.3f, "Enemy2"));
+        mCharacterBaseAttrsDict.Add(typeof(EnemyTroll), new CharacterBaseAttr("å·¨é­”", 200, 1f, "TrollIcon", 0.4f, "Enemy3"));
 
     }
 
     private void InitWeaponBaseAttr()
     {
      mWeaponBaseAttrsDict = new Dictionary<WeaponType, WeaponBaseAttr>();   
-        mWeaponBaseAttrsDict.Add(WeaponType.Gun, new WeaponBaseAttr("ÊÖÇ¹",20,5,"WeaponGun"));
-        mWeaponBaseAttrsDict.Add(WeaponType.Rifle, new WeaponBaseAttr("³¤Ç¹", 30, 7, "WeaponRifle"));
-        mWeaponBaseAttrsDict.Add(WeaponType.Rocket, new WeaponBaseAttr("»ğ¼ı", 40, 8, "WeaponRocket"));
+        mWeaponBaseAttrsDict.Add(WeaponType.Gun, new WeaponBaseAttr("æ‰‹æª",20,5,"WeaponGun"));
+        mWeaponBaseAttrsDict.Add(WeaponType.Rifle, new WeaponBaseAttr("é•¿æª", 30, 7, "WeaponRifle"));
+        mWeaponBaseAttrsDict.Add(WeaponType.Rocket, new WeaponBaseAttr("ç«ç®­", 40, 8, "WeaponRocket"));
     }
 
     public CharacterBaseAttr GetCharacterBaseAttr(Type t)
     {
         if (mCharacterBaseAttrsDict.ContainsKey(t) == false)
         {
-            Debug.LogError("ÎŞ·¨¸ù¾İËù¸øÀàĞÍ" + t + "µÃµ½½ÇÉ«»ù´¡ÊôĞÔ(GetCharacterBaseAttr)");
-            return null;
+            Debug.LogError("æ— æ³•æ ¹æ®ç±»å‹:" + t + "å¾—åˆ°è§’è‰²åŸºç¡€å±æ€§(GetCharacterBaseAttr)"); return null; return null;
         }
         return mCharacterBaseAttrsDict[t];
     }
@@ -47,8 +44,7 @@ public class AttrFactory:IAttrFactory
     {
         if (mWeaponBaseAttrsDict.ContainsKey(weaponType) == false)
         {
-            Debug.LogError("ÎŞ·¨¸ù¾İËù¸øÀàĞÍ" + weaponType + "µÃµ½½ÇÉ«»ù´¡ÊôĞÔ(GetCharacterBaseAttr)");
-            return null;
+             Debug.LogError("æ— æ³•æ ¹æ®ç±»å‹:" + weaponType + "å¾—åˆ°æ­¦å™¨åŸºç¡€å±æ€§"); return null;
         }
         return mWeaponBaseAttrsDict[weaponType];
     }

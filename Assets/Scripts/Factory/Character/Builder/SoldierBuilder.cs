@@ -18,8 +18,8 @@ public class SoldierBuilder:ICharacterBuilder
 
     public override void AddGameObject()
     {
-        //´´½¨½ÇÉ«ÓÎÏ·ÎïÌå
-        //1.¼ÓÔØ 2.ÊµÀý»¯ TODO
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
+        //1.ï¿½ï¿½ï¿½ï¿½ 2.Êµï¿½ï¿½ï¿½ï¿½ TODO
         GameObject characterGO = FactoryManager.AssetFactory.LoadSoldier(mPrefabName);
         characterGO.transform.position = mSpawnPosition;
         mCharacter.gameObject = characterGO;

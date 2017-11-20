@@ -108,7 +108,7 @@ using UnityEngine.AI;
             if (mGameObject == null)
              {
                  Debug.LogError("gameObject为空");
-                 return Vector3.zero;
+                return Vector3.zero;
              }
              return mGameObject.transform.position;
 

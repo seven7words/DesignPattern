@@ -25,15 +25,18 @@ public class ISoldier : ICharacter
     private void MakeFSM()
     {
         mFsmSystem = new SoldierFSMSystem();
-        SoldierIdleState idleState = new SoldierIdleState(mFsmSystem,this);
+
+        SoldierIdleState idleState = new SoldierIdleState(mFsmSystem, this);
         idleState.AddTransition(SoldierTransition.SeeEnemy, SoldierStateID.Chase);
 
-        SoldierChaseState chaseState = new SoldierChaseState(mFsmSystem,this);
-        chaseState.AddTransition(SoldierTransition.NoEnemy,SoldierStateID.Idle);
-         chaseState.AddTransition(SoldierTransition.CanAttack, SoldierStateID.Attack);
-        SoldierAttackState attackState = new SoldierAttackState(mFsmSystem,this);
+        SoldierChaseState chaseState = new SoldierChaseState(mFsmSystem, this);
+        chaseState.AddTransition(SoldierTransition.NoEnemy, SoldierStateID.Idle);
+        chaseState.AddTransition(SoldierTransition.CanAttack, SoldierStateID.Attack);
+
+        SoldierAttackState attackState = new SoldierAttackState(mFsmSystem, this);
         attackState.AddTransition(SoldierTransition.NoEnemy, SoldierStateID.Idle);
         attackState.AddTransition(SoldierTransition.SeeEnemy, SoldierStateID.Chase);
+
         mFsmSystem.AddState(idleState,chaseState,attackState);
       
     }

@@ -38,6 +38,8 @@ using UnityEngine.UI;
         mTrainCount = UITool.FindChild<Text>(mRootUI, "TrainingCount");
         mTrainTime = UITool.FindChild<Text>(mRootUI, "TrainTime");
         mWeaponLv = UITool.FindChild<Text>(mRootUI,"WeaponLv");
+        mTrainButton.onClick.AddListener(OnTrainClick);
+        mCancelTrainButton.onClick.AddListener(OnCancelTrainClick);
         Hide();
     }
     public void ShowCampInfo(Icamp camp){
@@ -62,6 +64,15 @@ using UnityEngine.UI;
             default:
             break;
         }
+    }
+    public void OnTrainClick(){
+        //能量是否足够 
+        //TODO:
+        mCamp.Train();
+    }
+    public void OnCancelTrainClick(){
+        //TODO:回收能量
+        mCamp.Cancel();
     }
 }
 

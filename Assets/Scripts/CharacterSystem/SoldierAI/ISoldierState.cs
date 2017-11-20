@@ -34,7 +34,7 @@ public enum SoldierStateID
         {
             get { return mStateID; }
         }
-
+       
         public void AddTransition(SoldierTransition trans, SoldierStateID stateID)
         {
             if (trans == SoldierTransition.NullTransition)

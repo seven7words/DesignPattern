@@ -10,6 +10,8 @@ public abstract class Icamp {
     protected SoldierType mSoldierType;
     protected Vector3 mPosition;//集合点
     protected float mTrainTime;
+    public List<ITrainCommand> mCommands;
+    private float mTrainTimer = 0;
     public Icamp(GameObject gameObject, string name, string icon, SoldierType soldierType, Vector3 position, float trainTime)
     {
         mGameObject = gameObject;
@@ -18,9 +20,22 @@ public abstract class Icamp {
         mSoldierType = soldierType;
         mPosition = position;
         mTrainTime = trainTime;
+        mCommands = new List<ITrainCommand>();
+        mTrainTimer = mTrainTime;
     }
     public virtual void Update(){
-        
+        UpdateCommand();
+    }
+    public void UpdateCommand(){
+        if(mCommands.Count<=0){
+            return;
+        }
+        mTrainTimer-=Time.deltaTime;
+        if(mTrainTimer<=0){
+            mCommands[0].Execute();
+            mCommands.RemoveAt(0);
+            mTrainTimer = mTrainTime;
+        }
     }
     public string name{
         get{
@@ -52,5 +67,14 @@ public abstract class Icamp {
     }
     public abstract WeaponType WeaponType{
         get;
+    }
+    public abstract void Train();
+    public  void Cancel(){
+        if(mCommands.Count>0){
+            mCommands.RemoveAt(mCommands.Count-1);       
+            if(mCommands.Count==0){
+                mTrainTimer = mTrainTime;
+            }
+        }
     }
 }
