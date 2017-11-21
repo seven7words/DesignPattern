@@ -52,6 +52,30 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\VSCode.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\pbase\QBaseComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QChildrenCountComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QColorComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QComponentsComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QErrorComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QGameObjectIconComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QLockComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QMonoBehaviorIconComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QPrefabComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QRendererComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QSeparatorComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QStaticComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QTagIconComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QTagLayerComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QTreeMapComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pcomponent\QVisibilityComponent.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pdata\QResources.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\pdata\QSettings.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\phelper\QColorPickerWindow.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\phelper\QObjectListInspector.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\phelper\QObjectListManager.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\phierarchy\QHierarchy.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\phierarchy\QHierarchySettingsWindow.cs" />
+     <Compile Include="Assets\QHierarchy\Editor\Scripts\QHierarchyInitializer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

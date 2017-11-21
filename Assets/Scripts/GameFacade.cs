@@ -101,5 +101,12 @@ public  class GameFacade
     public void ShowCampInfo(Icamp camp){
         mCampInfoUi.ShowCampInfo(camp);
     }
+    public void AddSoldier(ISoldier soldier){
+        mCharacterSystem.AddSoldier(soldier);
+
+    }
+    public void AddEnemy(IEnemy enemy){
+        mCharacterSystem.AddEnemy(enemy);
+    }
     }
 

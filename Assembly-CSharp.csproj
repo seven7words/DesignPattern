@@ -58,12 +58,15 @@
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
+     <Compile Include="Assets\QHierarchy\Scripts\QObjectList.cs" />
      <Compile Include="Assets\Scripts\AchievementSystem\AchievementSystem.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IBaseUI.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
      <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
      <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
      <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyCostStrategy.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyCostStrategy.cs" />
      <Compile Include="Assets\Scripts\CampSystem\Icamp.cs" />
      <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Attr\BaseAttr\CharacterBaseAttr.cs" />

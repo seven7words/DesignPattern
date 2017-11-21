@@ -23,4 +23,5 @@ public  abstract  void  AddCharacterAttr();
     public abstract void AddGameObject();
     public abstract void AddWeapon();
     public abstract ICharacter GetResult();
+    public abstract void AddInCharacterSystem();
 }

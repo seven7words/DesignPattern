@@ -49,6 +49,13 @@ using UnityEngine.UI;
         mCampName.text = camp.name;
         mCampLevel.text = camp.lv.ToString();
         ShowWeaponLevel(camp.WeaponType);
+        mTrainCount.text = camp.TrainCount.ToString();
+        
+        if(camp.TrainCount==0){
+            //mCancelTrainButton.enabled = false;
+            mCancelTrainButton.interactable = false;
+        }
+
     }
     void ShowWeaponLevel(WeaponType weaponType){
         switch(weaponType){
@@ -73,6 +80,26 @@ using UnityEngine.UI;
     public void OnCancelTrainClick(){
         //TODO:回收能量
         mCamp.Cancel();
+    }
+    public  override  void Update(){
+        base.Update();
+        if(mCamp!=null)
+            ShowTrainingInfo();
+    }
+    private void ShowTrainingInfo(){
+        if(mCamp!=null){
+            mTrainCount.text = mCamp.TrainCount.ToString();
+            if(mCamp.TrainRemainingTime>0)
+                mTrainTime.text = mCamp.TrainRemainingTime.ToString("0.00");
+            if(mCamp.TrainCount==0){
+                //mCancelTrainButton.enabled = false;
+                mCancelTrainButton.interactable = false;
+            }
+            else{
+                 mCancelTrainButton.interactable = true;
+            }
+        }
+        
     }
 }
 

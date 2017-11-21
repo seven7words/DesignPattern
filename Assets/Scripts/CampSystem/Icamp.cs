@@ -77,4 +77,17 @@ public abstract class Icamp {
             }
         }
     }
+    public int TrainCount{
+        get{
+              return mCommands.Count;
+        }
+    }
+      
+    
+    public float TrainRemainingTime{
+        get{
+            return mTrainTimer;
+        }
+        
+    }
 }
