@@ -17,7 +17,9 @@ using UnityEngine.UI;
     private Button mBackButton;
     private Text mMessage;
     private Slider mEnergySlider;
-
+    private Text mEnergyLabel;
+    private float mMsgTimer = 0;
+    private int mMsgTime = 2;
         public override void Init()
         {
             base.Init();
@@ -39,7 +41,27 @@ using UnityEngine.UI;
             mBackButton = UITool.FindChild<Button>(mRootUI, "BackButton");
             mMessage = UITool.FindChild<Text>(mRootUI, "Message");
             mEnergySlider = UITool.FindChild<Slider>(mRootUI, "EnergySlider");
+            mEnergyLabel = UITool.FindChild<Text>(mRootUI, "EnergyLabel");
+            mMessage.text = "";
             mGameOverUI.SetActive(false);
+        }
+        public void ShowMsg(string msg){
+            mMessage.text = msg;
+            mMsgTimer = mMsgTime;
+        }
+        public override void Update(){
+            base.Update();
+            if(mMsgTimer>0){
+                mMsgTimer-=Time.deltaTime;
+                if(mMsgTimer<=0){
+                    Debug.Log(mMessage.text);
+                    mMessage.text = "";
+                }
+            }
+        }
+        public void UpdateEnergySlider(int nowEnergy,int maxEnergy){
+            mEnergySlider.value =(float)nowEnergy/maxEnergy;
+            mEnergyLabel.text = nowEnergy+"/"+maxEnergy;
         }
     }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assets.Scripts.EnergySystem;
 using Assets.Scripts.GameEventSystem;
 using Assets.Scripts.StageSystem;
 using UnityEngine;
@@ -107,6 +106,18 @@ public  class GameFacade
     }
     public void AddEnemy(IEnemy enemy){
         mCharacterSystem.AddEnemy(enemy);
+    }
+    public bool TakeEnergy(int value){
+        return mEnergySystem.TakeEnergy(value);
+    }
+    public void ShowMsg(string msg){
+        mGameStateInfoUi.ShowMsg(msg);
+    }
+    public void RecycleEnergy(int value){
+        mEnergySystem.RecycleEnergy(value);
+    }
+    public void UpdateEnergySlider(int nowEnergy,int maxEnergy){
+        mGameStateInfoUi.UpdateEnergySlider(nowEnergy,maxEnergy);
     }
     }
 

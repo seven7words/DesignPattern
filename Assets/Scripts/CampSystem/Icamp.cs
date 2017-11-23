@@ -12,6 +12,11 @@ public abstract class Icamp {
     protected float mTrainTime;
     public List<ITrainCommand> mCommands;
     private float mTrainTimer = 0;
+   protected int mEnergyCostCampUpgrade;
+   protected int mEnergyCostWeaponUpgrade;
+   protected int mEnergyCostTrain;
+    protected IEnergyCostStrategy energyCostStrategy;
+
     public Icamp(GameObject gameObject, string name, string icon, SoldierType soldierType, Vector3 position, float trainTime)
     {
         mGameObject = gameObject;
@@ -22,6 +27,7 @@ public abstract class Icamp {
         mTrainTime = trainTime;
         mCommands = new List<ITrainCommand>();
         mTrainTimer = mTrainTime;
+       
     }
     public virtual void Update(){
         UpdateCommand();
@@ -37,6 +43,9 @@ public abstract class Icamp {
             mTrainTimer = mTrainTime;
         }
     }
+    protected abstract void UpdateEnergyCost();
+    public abstract void UpgradeCamp();
+    public abstract void UpgradeWeapon();
     public string name{
         get{
             return mName;
@@ -68,6 +77,10 @@ public abstract class Icamp {
     public abstract WeaponType WeaponType{
         get;
     }
+    public abstract int EnergyCostCampUpgrade{get;}
+    public abstract int EnergyCostWeaponUpgrade{get;}
+    public abstract int EnergyCostTrain{get;}
+
     public abstract void Train();
     public  void Cancel(){
         if(mCommands.Count>0){
@@ -90,4 +103,5 @@ public abstract class Icamp {
         }
         
     }
+   
 }
