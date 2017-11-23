@@ -4,7 +4,7 @@ using UnityEngine;
 public class ResourcesAssetFactory:IAssetFactory
 {
     public const string SoldierPath = "Characters/Soldier/";
-    public const string EnemyPath = "Characters/Enemys/";
+    public const string EnemyPath = "Characters/Enemy/";
     public const string WeaponPath = "Weapons/";
     public const string EffectPath = "Effects/";
     public const string AudioPath = "Audios/";
@@ -43,7 +43,7 @@ public class ResourcesAssetFactory:IAssetFactory
 
     private GameObject InstantiateGameObject(string path)
     {
-     GameObject go =   Resources.Load(path) as GameObject;
+        GameObject go = Resources.Load(path) as GameObject;
         if (go == null)
         {
             Debug.LogError("无法加载资源"+path);

@@ -55,6 +55,7 @@
      <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CommandDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CompositeDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\ResponsibilityChainDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
@@ -122,6 +123,8 @@
      <Compile Include="Assets\Scripts\SceneState\MainMenuState.cs" />
      <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
      <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
+     <Compile Include="Assets\Scripts\StageSystem\Handler\IStageHandler.cs" />
+     <Compile Include="Assets\Scripts\StageSystem\Handler\NormalStageHandler.cs" />
      <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
      <Compile Include="Assets\Scripts\Tools\UITool.cs" />
      <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />

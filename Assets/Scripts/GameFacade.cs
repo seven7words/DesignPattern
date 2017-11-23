@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assets.Scripts.GameEventSystem;
-using Assets.Scripts.StageSystem;
 using UnityEngine;
 /// <summary>
 /// 既有外观模式，也有中介者模式
@@ -95,7 +93,7 @@ public  class GameFacade
     public Vector3 GetEnemyTargetPosition()
     {
         //TOFO
-        return Vector3.zero;
+        return mStageSystem.TargetPosition;
     }
     public void ShowCampInfo(Icamp camp){
         mCampInfoUi.ShowCampInfo(camp);

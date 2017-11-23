@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyType{
+   Elf,
+   Ogre,
+   Troll,
+}
 public class IEnemy : ICharacter {
 
     EnemyFSMSystem mFSMSystem;
@@ -11,6 +16,7 @@ public class IEnemy : ICharacter {
     }
     public override void UpdateFSMAI(List<ICharacter> targets)
     {
+        if(mIsKilled) return;
         mFSMSystem.currentState.Reason(targets);
         mFSMSystem.currentState.Act(targets);
 

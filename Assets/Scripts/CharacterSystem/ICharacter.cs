@@ -15,7 +15,9 @@ using UnityEngine.AI;
      protected NavMeshAgent mNavMeshAgent;
      protected AudioSource mAudio;
      protected Animation mAnim;
-
+    protected bool mIsKilled = false;
+    protected bool mCanDestroy = false;
+    protected float mDestroyTimer = 2;
      protected IWeapon mWeapon;
 
      public IWeapon Weapon
@@ -64,11 +66,24 @@ using UnityEngine.AI;
 
      public void Killed()
      {
-         //TODO
+         //TODO:
+         mIsKilled = true;
+        mNavMeshAgent.isStopped = true;
+
+     }
+     public void Release(){
+         GameObject.Destroy(mGameObject);
      }
      public abstract void UpdateFSMAI(List<ICharacter> targets);
      public void Update()
      {
+         if(mIsKilled){
+             mDestroyTimer-=Time.deltaTime;
+             if(mDestroyTimer<=0){
+                 mCanDestroy = true;
+                 return;
+             }
+         }
          mWeapon.Update();
      }
      public void PlayAnim(string animName)
@@ -96,7 +111,11 @@ using UnityEngine.AI;
          effectGO.AddComponent<DestroyForTime>();
 
      }
-
+    public bool CanDestroy{
+        get{
+            return mCanDestroy;
+        }
+    }
      public ICharacterAttr attr
      {
          set { mAttr = value; }
