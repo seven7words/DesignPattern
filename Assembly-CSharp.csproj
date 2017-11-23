@@ -55,6 +55,7 @@
      <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CommandDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CompositeDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\ObserverDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\ResponsibilityChainDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
@@ -114,6 +115,11 @@
      <Compile Include="Assets\Scripts\Factory\Weapon\IWeaponFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Weapon\WeaponFactory.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Observer\IGameEventObserver.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Subject\EnemyKilledSubject.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Subject\IGameEventSubject.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Subject\NewStageSubject.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Subject\SoldierKilledSubject.cs" />
      <Compile Include="Assets\Scripts\GameFacade.cs" />
      <Compile Include="Assets\Scripts\GameLoop.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviour\CampOnClick.cs" />
