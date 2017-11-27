@@ -122,6 +122,7 @@
      <Compile Include="Assets\Scripts\GameEventSystem\Subject\SoldierKilledSubject.cs" />
      <Compile Include="Assets\Scripts\GameFacade.cs" />
      <Compile Include="Assets\Scripts\GameLoop.cs" />
+     <Compile Include="Assets\Scripts\Manager\MonoSingleton.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviour\CampOnClick.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviour\DestroyForTime.cs" />
      <Compile Include="Assets\Scripts\SceneState\BattleState.cs" />
