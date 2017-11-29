@@ -1,3 +1,0 @@
-// public class StandardImplementA:StandardImplementA{
-	
-// }
