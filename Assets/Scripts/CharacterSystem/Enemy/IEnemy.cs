@@ -58,7 +58,7 @@ public class IEnemy : ICharacter {
         } 
     }
 
-    protected virtual void PlayEffect()
+    public virtual void PlayEffect()
     {
         
     }

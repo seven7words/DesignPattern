@@ -49,8 +49,17 @@ using System.Text;
         {
             get { return mCurrentHP; }
         }
+        public IAttrStrategy Strategy{
+            get{
+                return mStrategy;
+            }
+        }
 
-
+        public CharacterBaseAttr baseAttr{
+            get{
+                return mBaseAttr;
+            }
+        }
         public void TakeDamage(int damage)
         {
 

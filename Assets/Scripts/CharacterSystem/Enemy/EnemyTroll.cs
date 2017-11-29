@@ -22,7 +22,7 @@ using System.Text;
     #endregion
     #region 帮助方法
     #endregion
-        protected override void PlayEffect()
+        public override void PlayEffect()
         {
             DoPlayEffect("TrollHitEffext");
         }

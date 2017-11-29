@@ -69,7 +69,9 @@
      <Compile Include="Assets\Scripts\BaseClass\IBaseUI.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
      <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\CaptiveCamp.cs" />
      <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
+     <Compile Include="Assets\Scripts\CampSystem\Command\TrainCaptiveCommand.cs" />
      <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
      <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyCostStrategy.cs" />
      <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyCostStrategy.cs" />
@@ -94,6 +96,7 @@
      <Compile Include="Assets\Scripts\CharacterSystem\ICharacter.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\ISoldier.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptive.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\ISoldierState.cs" />

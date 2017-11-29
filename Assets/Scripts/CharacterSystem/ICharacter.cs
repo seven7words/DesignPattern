@@ -46,6 +46,9 @@ using UnityEngine.AI;
              GameObject child = UnityTool.FindChild(mGameObject, "weapon-point");
              UnityTool.Attach(child,mWeapon.GameObject);
          }
+         get{
+             return mWeapon;
+         }
      }
 
      public float atkRange
@@ -68,6 +71,9 @@ using UnityEngine.AI;
              mNavMeshAgent = mGameObject.GetComponent<NavMeshAgent>();
              mAudio = mGameObject.GetComponent<AudioSource>();
              mAnim = mGameObject.GetComponentInChildren<Animation>();
+         }
+         get{
+             return mGameObject;
          }
      }
 
@@ -140,6 +146,9 @@ using UnityEngine.AI;
      public ICharacterAttr attr
      {
          set { mAttr = value; }
+         get{
+             return mAttr;
+         }
      }
     public Vector3 Position
      {

@@ -157,5 +157,8 @@ public  class GameFacade
     public void RunVisitor(ICharacterVisitor visitor){
         mCharacterSystem.RunVisitor(visitor);
     }
+    public void RemoveEnemy(IEnemy enemy){
+        mCharacterSystem.RemoveEnemy(enemy);
+    }
     }
 
