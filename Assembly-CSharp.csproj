@@ -111,6 +111,7 @@
      <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\RemoteAssetFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
+     <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetProxyFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Attr\AttrFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Attr\IAttrFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Character\Builder\CharacterBuilderDirector.cs" />

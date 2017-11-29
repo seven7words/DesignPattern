@@ -69,7 +69,7 @@ public class ResourcesAssetFactory:IAssetFactory
 
     }
 
-    private UnityEngine.Object LoadAsset(string path)
+    public UnityEngine.Object LoadAsset(string path)
     {
         UnityEngine.Object go = Resources.Load(path) ;
         if (go == null)
