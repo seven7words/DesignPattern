@@ -17,6 +17,22 @@ public enum EnemyStateID
 }
 public abstract class IEnemyState
 {
+     #region å¸¸é‡
+    #endregion
+    #region  å±æ€§
+    #endregion
+    #region å­—æ®µ
+    #endregion
+    #region äº‹ä»¶
+    #endregion
+    #region æ–¹æ³•
+    #endregion
+    #region Unityå›è°ƒ
+    #endregion
+    #region  äº‹ä»¶å›è°ƒ
+    #endregion
+    #region å¸®åŠ©æ–¹æ³•
+    #endregion
     protected ICharacter mCharacter;
     protected Dictionary<EnemyTransition, EnemyStateID> map = new Dictionary<EnemyTransition, EnemyStateID>();
     protected EnemyStateID mStateID;
@@ -36,15 +52,15 @@ public abstract class IEnemyState
     {
         if (trans == EnemyTransition.NullTransition)
         {
-            Debug.LogError("EnemyStateID Error : trans²»ÄÜÎª¿Õ");
+            Debug.LogError("EnemyStateID Error : transï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
         }
         if (stateID == EnemyStateID.NullState)
         {
-            Debug.LogError("EnemyStateID Error:id×´Ì¬Id²»ÄÜÎª¿Õ");
+            Debug.LogError("EnemyStateID Error:id×´Ì¬Idï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
         }
         if (map.ContainsKey(trans))
         {
-            Debug.LogError("EnemyStateID Error " + trans + "ÒÑ¾­Ìí¼ÓÉÏ");
+            Debug.LogError("EnemyStateID Error " + trans + "ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         map.Add(trans, stateID);
     }
@@ -53,7 +69,7 @@ public abstract class IEnemyState
     {
         if (map.ContainsKey(trans) == false)
         {
-            Debug.LogError("É¾³ı×ª»»Ìõ¼ş²»´æÔÚ" + trans);
+            Debug.LogError("É¾ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + trans);
         }
         else
         {
@@ -65,7 +81,7 @@ public abstract class IEnemyState
     {
         if (map.ContainsKey(trans) == false)
         {
-            //Debug.LogError("É¾³ı×ª»»Ìõ¼ş²»´æÔÚ" + trans);
+            //Debug.LogError("É¾ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + trans);
             return EnemyStateID.NullState;
         }
         else

@@ -59,6 +59,7 @@
      <Compile Include="Assets\DesignModeCode\MomentoDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\ObserverDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\ResponsibilityChainDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\StandardImplementA.cs" />
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
