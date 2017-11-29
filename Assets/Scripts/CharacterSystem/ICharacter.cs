@@ -64,7 +64,7 @@ using UnityEngine.AI;
 
      }
 
-     public void Killed()
+     public virtual void Killed()
      {
          //TODO:
          mIsKilled = true;
@@ -75,6 +75,7 @@ using UnityEngine.AI;
          GameObject.Destroy(mGameObject);
      }
      public abstract void UpdateFSMAI(List<ICharacter> targets);
+     public abstract void RunVisitor(ICharacterVisitor visitor);
      public void Update()
      {
          if(mIsKilled){
@@ -90,7 +91,11 @@ using UnityEngine.AI;
      {
          mAnim.CrossFade(animName);
      }
-
+    public bool isKilled{
+        get{
+            return mIsKilled;
+        }
+    }
      public void MoveTo(Vector3 targetPosition)
      {
          mNavMeshAgent.SetDestination(targetPosition);

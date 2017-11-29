@@ -9,18 +9,18 @@ public enum GameEventType{
     SoldierKilled,
     NewStage,
 }
-class GameEventSystem:IGameSystem
+public class GameEventSystem:IGameSystem
 {
     private Dictionary<GameEventType,IGameEventSubject> mGameEvents = new Dictionary<GameEventType, IGameEventSubject>();
     public override void Init()
     {
         base.Init();
-        InitGameEvents();
+        //InitGameEvents();
     }
-    private void InitGameEvents(){
-        mGameEvents.Add(GameEventType.EnemyKilled,new EnemyKilledSubject());
-        mGameEvents.Add(GameEventType.SoldierKilled,new SoldierKilledSubject());
-        mGameEvents.Add(GameEventType.NewStage,new NewStageSubject());
+    private void InitGameEvents(){ 
+            mGameEvents.Add(GameEventType.EnemyKilled,new EnemyKilledSubject());
+            mGameEvents.Add(GameEventType.SoldierKilled,new SoldierKilledSubject());
+            mGameEvents.Add(GameEventType.NewStage,new NewStageSubject());
     }
     public void RegisterObserver(GameEventType eventType,IGameEventObserver observer){
         IGameEventSubject sub =GetGameEvent(eventType);
@@ -36,8 +36,21 @@ class GameEventSystem:IGameSystem
     }
     private IGameEventSubject GetGameEvent(GameEventType eventType){
          if(mGameEvents.ContainsKey(eventType)==false){
-           Debug.LogError("没有对应事件类型");
-           return null;
+           switch(eventType){
+               case GameEventType.EnemyKilled:
+                    mGameEvents.Add(GameEventType.EnemyKilled,new EnemyKilledSubject());
+               break;
+               case GameEventType.NewStage:
+                     mGameEvents.Add(GameEventType.NewStage,new NewStageSubject());
+
+               break;
+               case GameEventType.SoldierKilled:
+                    mGameEvents.Add(GameEventType.SoldierKilled,new SoldierKilledSubject());
+               break;
+               default:
+                    Debug.LogError("没有对应事件类型");
+               break;
+           }
        }
        IGameEventSubject sub = mGameEvents[eventType];
        return sub;

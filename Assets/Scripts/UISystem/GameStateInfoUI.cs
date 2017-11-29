@@ -20,6 +20,7 @@ using UnityEngine.UI;
     private Text mEnergyLabel;
     private float mMsgTimer = 0;
     private int mMsgTime = 2;
+    private AliveCountVisitor mAliveCountVisitor = new AliveCountVisitor();
         public override void Init()
         {
             base.Init();
@@ -51,6 +52,7 @@ using UnityEngine.UI;
         }
         public override void Update(){
             base.Update();
+            UpdateAliveCount();
             if(mMsgTimer>0){
                 mMsgTimer-=Time.deltaTime;
                 if(mMsgTimer<=0){
@@ -62,6 +64,12 @@ using UnityEngine.UI;
         public void UpdateEnergySlider(int nowEnergy,int maxEnergy){
             mEnergySlider.value =(float)nowEnergy/maxEnergy;
             mEnergyLabel.text = nowEnergy+"/"+maxEnergy;
+        }
+        public void UpdateAliveCount(){
+            mAliveCountVisitor.Reset();
+            mFacade.RunVisitor(mAliveCountVisitor);
+            mSoldierCount.text = mAliveCountVisitor.soldierCount.ToString();
+            mEnemyCount.text = mAliveCountVisitor.enemyCount.ToString();
         }
     }
 

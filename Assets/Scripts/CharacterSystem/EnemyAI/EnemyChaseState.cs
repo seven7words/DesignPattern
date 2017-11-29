@@ -15,7 +15,6 @@ public class EnemyChaseState : IEnemyState
 
     public override void Act(List<ICharacter> targets)
     {
-        Debug.Log("ACT");
         if (targets != null && targets.Count > 0)
         {
             mCharacter.MoveTo(targets[0].Position);

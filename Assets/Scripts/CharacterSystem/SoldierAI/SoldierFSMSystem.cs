@@ -20,7 +20,6 @@ public  class SoldierFSMSystem
           
           foreach (ISoldierState soldierState in states)
           {
-              Debug.Log(soldierState);
               AddState(soldierState);
           }
       }
@@ -31,7 +30,6 @@ public  class SoldierFSMSystem
               Debug.LogError("要添加的状态为空");
               return;
           }
-          Debug.Log(state);
           if (mStates.Count == 0)
           {
               mStates.Add(state);

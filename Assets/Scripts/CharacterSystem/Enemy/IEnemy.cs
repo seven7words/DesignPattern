@@ -33,6 +33,7 @@ public class IEnemy : ICharacter {
 
     public override void UnderAttack(int damage)
     {
+        if(mIsKilled) return;
         base.UnderAttack(damage);
         PlayEffect();
         if (mAttr.currentHP <= 0)
@@ -45,6 +46,13 @@ public class IEnemy : ICharacter {
     {
         
     }
-
-    
+    public override void Killed()
+    {
+        base.Killed();
+        GameFacade.Instance.NotifySubject(GameEventType.EnemyKilled);
+    }
+    public override void RunVisitor(ICharacterVisitor visitor){
+        visitor.VisitEnemy(this);
+    }
+        
 }

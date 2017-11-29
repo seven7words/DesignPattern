@@ -60,6 +60,7 @@ public  class GameFacade
         mGamePauseUi.Init();
         mSoldierInfoUi.Init();
         mGameStateInfoUi.Init();
+        LoadMemento();
 
         }
 
@@ -79,7 +80,7 @@ public  class GameFacade
 
         public void Release()
         {
-        mAchievementSystem.Release();
+            mAchievementSystem.Release();
             mCampSystem.Release();
             mCharacterSystem.Release();
             mEnergySystem.Release();
@@ -89,6 +90,8 @@ public  class GameFacade
             mGamePauseUi.Release();
             mSoldierInfoUi.Release();
             mGameStateInfoUi.Release();
+            CreateMemento();
+
     }
     public Vector3 GetEnemyTargetPosition()
     {
@@ -116,6 +119,27 @@ public  class GameFacade
     }
     public void UpdateEnergySlider(int nowEnergy,int maxEnergy){
         mGameStateInfoUi.UpdateEnergySlider(nowEnergy,maxEnergy);
+    }
+    public void RegisterObserver(GameEventType eventType,IGameEventObserver observer){
+        mGameEventSystem.RegisterObserver(eventType,observer);
+    }
+    public void RemoveObserver(GameEventType eventType,IGameEventObserver observer){
+        mGameEventSystem.RemoveObserver(eventType,observer);
+    }
+    public void NotifySubject(GameEventType eventType){
+        mGameEventSystem.NotifySubject(eventType);
+    }
+    public void CreateMemento(){
+      AchievementMemento memento =  mAchievementSystem.CreateMemento();
+      memento.SaveData();
+    }
+    public void LoadMemento(){
+        AchievementMemento memento = new AchievementMemento();
+        memento.LoadData();
+        mAchievementSystem.SetMemento(memento);
+    }
+    public void RunVisitor(ICharacterVisitor visitor){
+        mCharacterSystem.RunVisitor(visitor);
     }
     }
 

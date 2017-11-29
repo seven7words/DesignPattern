@@ -69,5 +69,13 @@ class CharacterSystem : IGameSystem
             characters.Remove(character);
         }
     }
+    public  void RunVisitor(ICharacterVisitor visitor){
+       foreach(ICharacter character in mEnemys){
+           character.RunVisitor(visitor);
+       }
+       foreach(ICharacter character in mSoldiers){
+           character.RunVisitor(visitor);
+       }
+    }
     }
 

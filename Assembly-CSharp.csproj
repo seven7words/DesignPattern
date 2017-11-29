@@ -51,16 +51,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DesignModeCode\AdaptorDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\BridgeDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CommandDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\CompositeDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\MomentoDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\ObserverDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\ResponsibilityChainDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StateDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\StrategyDesignMode.cs" />
      <Compile Include="Assets\DesignModeCode\TempleteMethodDesignMode.cs" />
+     <Compile Include="Assets\DesignModeCode\VisitorDesignMode.cs" />
      <Compile Include="Assets\QHierarchy\Scripts\QObjectList.cs" />
+     <Compile Include="Assets\Scripts\AchievementSystem\AchievementMemento.cs" />
      <Compile Include="Assets\Scripts\AchievementSystem\AchievementSystem.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IBaseUI.cs" />
      <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
@@ -97,6 +101,8 @@
      <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierChaseState.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierFSMSystem.cs" />
      <Compile Include="Assets\Scripts\CharacterSystem\SoldierAI\SoldierIdleState.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\Visitor\AliveCountVisitor.cs" />
+     <Compile Include="Assets\Scripts\CharacterSystem\Visitor\ICharacterVisitor.cs" />
      <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\IAssetFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
@@ -115,7 +121,11 @@
      <Compile Include="Assets\Scripts\Factory\Weapon\IWeaponFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\Weapon\WeaponFactory.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Observer\EnemyKilledObserver\EnemyKilledObserverArchievement.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Observer\EnemyKilledObserver\EnemyKilledObserverStageSystem.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\Observer\IGameEventObserver.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Observer\NewStageObserver\NewStageObserverArchievement.cs" />
+     <Compile Include="Assets\Scripts\GameEventSystem\Observer\SoldierKilledObserver\SoldierKilledObserverArchievement.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\Subject\EnemyKilledSubject.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\Subject\IGameEventSubject.cs" />
      <Compile Include="Assets\Scripts\GameEventSystem\Subject\NewStageSubject.cs" />

@@ -10,18 +10,25 @@ using UnityEngine;
         List<Vector3> mPosList;
         Vector3 mTargetPosition;
         IStageHandler mRootHandler;
+        int mCountOfEnemyKilled = 0;
         public void Init()
         {
            base.Init();
            InitPosition();
            InitStageChain();
+           mFacade.RegisterObserver(GameEventType.EnemyKilled,new EnemyKilledObserverStageSystem(this));
+        }
+        public int CountOfEnemyKilled{
+            set{
+                mCountOfEnemyKilled = value;
+            }
         }
         private void InitStageChain(){
             int lv =1;
-            NormalStageHandler hanlder1 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Gun,3,GetRandomPos(),lv*2,this);
-            NormalStageHandler hanlder2 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Rifle,3,GetRandomPos(),lv*2,this); 
-            NormalStageHandler hanlder3 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Rocket,3,GetRandomPos(),lv*2,this);
-            NormalStageHandler hanlder4 = new NormalStageHandler(lv++,EnemyType.Ogre,WeaponType.Gun,4,GetRandomPos(),lv*2,this);
+            NormalStageHandler hanlder1 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Gun,4,GetRandomPos(),lv*2,this);
+            NormalStageHandler hanlder2 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Rifle,8,GetRandomPos(),lv*2,this); 
+            NormalStageHandler hanlder3 = new NormalStageHandler(lv++,EnemyType.Elf,WeaponType.Rocket,16,GetRandomPos(),lv*2,this);
+            NormalStageHandler hanlder4 = new NormalStageHandler(lv++,EnemyType.Ogre,WeaponType.Gun,32,GetRandomPos(),lv*2,this);
             NormalStageHandler hanlder5 = new NormalStageHandler(lv++,EnemyType.Ogre,WeaponType.Rifle,4,GetRandomPos(),lv*2,this);
             NormalStageHandler hanlder6 = new NormalStageHandler(lv++,EnemyType.Ogre,WeaponType.Rocket,4,GetRandomPos(),lv*2,this);
             NormalStageHandler hanlder7 = new NormalStageHandler(lv++,EnemyType.Troll,WeaponType.Gun,5,GetRandomPos(),lv*2,this);
@@ -64,12 +71,12 @@ using UnityEngine;
            
         }
         public int GetCountOfEnemyKilled(){
-            //TODO:
-            return 0;
+            return mCountOfEnemyKilled;
         }
-        public void EnterNextStage(){
-            //TODO:
+        public void EnterNextStage(){ 
             mLv++;
+            mFacade.NotifySubject(GameEventType.NewStage);
+
         }
         public Vector3 TargetPosition{
             get{
