@@ -6,7 +6,7 @@ using System.Text;
 
  public   class ISceneState
  {
-      #region 常量
+    #region 常量
     #endregion
     #region  属性
     #endregion

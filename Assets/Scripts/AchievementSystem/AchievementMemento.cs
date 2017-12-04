@@ -6,12 +6,25 @@ public class AchievementMemento : MonoBehaviour {
     #region 常量
     #endregion
     #region  属性
+        public int EnemyKilledCount {get;set;}
+        public int SoldierKilledCount {get;set;}
+        public int MaxStageLv {get;set;}
     #endregion
     #region 字段
     #endregion
     #region 事件
     #endregion
     #region 方法
+        public void SaveData(){
+            PlayerPrefs.SetInt("EnemyKilledCount",EnemyKilledCount);
+            PlayerPrefs.SetInt("SoldierKilledCount",SoldierKilledCount);
+            PlayerPrefs.SetInt("MaxStageLv",MaxStageLv);
+        }
+        public void LoadData(){
+            EnemyKilledCount = PlayerPrefs.GetInt("EnemyKilledCount");
+            SoldierKilledCount = PlayerPrefs.GetInt("SoldierKilledCount");
+            MaxStageLv = PlayerPrefs.GetInt("MaxStageLv");
+        }
     #endregion
     #region Unity回调
     #endregion
@@ -19,18 +32,7 @@ public class AchievementMemento : MonoBehaviour {
     #endregion
     #region 帮助方法
     #endregion
-	public int EnemyKilledCount {get;set;}
-    public int SoldierKilledCount {get;set;}
-    public int MaxStageLv {get;set;}
 	
-	 public void SaveData(){
-        PlayerPrefs.SetInt("EnemyKilledCount",EnemyKilledCount);
-        PlayerPrefs.SetInt("SoldierKilledCount",SoldierKilledCount);
-        PlayerPrefs.SetInt("MaxStageLv",MaxStageLv);
-    }
-    public void LoadData(){
-        EnemyKilledCount = PlayerPrefs.GetInt("EnemyKilledCount");
-        SoldierKilledCount = PlayerPrefs.GetInt("SoldierKilledCount");
-        MaxStageLv = PlayerPrefs.GetInt("MaxStageLv");
-    }
+	
+	
 }

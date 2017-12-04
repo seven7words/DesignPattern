@@ -70,5 +70,6 @@ public class IEnemy : ICharacter {
     public override void RunVisitor(ICharacterVisitor visitor){
         visitor.VisitEnemy(this);
     }
+    
         
 }
