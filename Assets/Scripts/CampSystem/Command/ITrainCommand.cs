@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public abstract class ITrainCommand
 {
-     #region 常量
+    #region 常量
     #endregion
     #region  属性
     #endregion
@@ -12,6 +12,7 @@ public abstract class ITrainCommand
     #region 事件
     #endregion
     #region 方法
+        public abstract void Execute();
     #endregion
     #region Unity回调
     #endregion
@@ -19,5 +20,5 @@ public abstract class ITrainCommand
     #endregion
     #region 帮助方法
     #endregion
-    public abstract void Execute();
+    
 }

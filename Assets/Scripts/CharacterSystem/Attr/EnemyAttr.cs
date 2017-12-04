@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 
 
- public   class EnemyAttr:ICharacterAttr
+ public class EnemyAttr:ICharacterAttr
     {
-         #region 常量
+    #region 常量
     #endregion
     #region  属性
     #endregion
@@ -15,6 +15,9 @@ using System.Text;
     #region 事件
     #endregion
     #region 方法
+        public EnemyAttr(IAttrStrategy strategy, int lv, CharacterBaseAttr baseAttr) : base(strategy, lv, baseAttr)
+        {
+        }
     #endregion
     #region Unity回调
     #endregion
@@ -22,8 +25,6 @@ using System.Text;
     #endregion
     #region 帮助方法
     #endregion
-        public EnemyAttr(IAttrStrategy strategy, int lv, CharacterBaseAttr baseAttr) : base(strategy, lv, baseAttr)
-        {
-        }
+       
     }
 
